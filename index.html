@@ -28,8 +28,12 @@
         <label for="pic">รูป&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</label>
         <input type="file" id="pic" name="pic"><br>
 
-        <label for="address">ที่อยู่&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</label>
-        <textarea rows="4" cols="40"></textarea><br>
+        <table style="text-align: center; vertical-align: middle;">
+            <tr>
+                <td>ที่อยู่&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</td>
+                <td><textarea rows="4" cols="40"></textarea></td>
+            </tr>
+        </table>
         
         <label for="color">สีที่ชอบ&emsp;&emsp;&emsp;&nbsp;&nbsp;</label>
         <select id="color" name="color">
@@ -45,7 +49,25 @@
         <input type="radio" id="folk" name="music" value="ลูกทุ่ง">
         <label for="folk">ลูกทุ่ง</label>
         <input type="radio" id="other" name="music" value="อื่นๆ">
-        <label for="other">อื่นๆ</label><br>
+        <label for="other">อื่นๆ</label>
+        <input type="text" id="other" name="music">
+        <br>
+
+        <label for="pet">สัตว์ที่ชอบ&emsp;&emsp;</label>
+        <input type="radio" id="dog" name="pet" value="สุนัข">
+        <label for="dog">สุนัข</label>
+        <input type="radio" id="cat" name="pet" value="แมว">
+        <label for="cat">แมว</label>
+        <input type="radio" id="bird" name="pet" value="นก">
+        <label for="bird">นก</label><br>
+
+        <label for="sport">กีฬาที่ชอบ&emsp;&emsp;</label>
+        <input type="checkbox" id="football" name="sport" value="ฟุตบอล">
+        <label for="football">ฟุตบอล</label>
+        <input type="checkbox" id="muzzle" name="sport" value="ตะกร้อ">
+        <label for="muzzle">ตะกร้อ</label>
+        <input type="checkbox" id="basketball" name="sport" value="บาสเกตบอล">
+        <label for="basketball">บาสเกตบอล</label><br>
 
         <br>
         
@@ -58,7 +80,5 @@
         <button type="submit">Submit</button>
     
     </form>
-
-    
 </body>
 </html>
