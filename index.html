@@ -1,11 +1,63 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
     <title>Workshop #HTML - FORM</title>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: "Mitr";
+        }
+        form {
+            padding: 30px;
+            border: 2px solid #707070ce;
+            border-radius: 10px;
+            background-color: #dbe2f1;
+        }
+        label:hover{
+            border-color: #dbe2f1;
+            background-color: #a1c7b1;
+        }
+        button:hover{
+            border-color: #dbe2f1;
+            background-color: #a1c7b1;
+        }
+        input:hover{
+            border-color: #dbe2f1;
+            background-color: #a1c7b1;
+        }
+
+        @keyframes rainbow {
+            0% { border-color: red; }
+            14% { border-color: orange; }
+            28% { border-color: yellow; }
+            42% { border-color: green; }
+            57% { border-color: blue; }
+            71% { border-color: indigo; }
+            85% { border-color: violet; }
+            100% { border-color: red; }
+        }
+
+        input:focus, select:focus, textarea:focus {
+            animation: rainbow 1s infinite;
+            background-color: #f0f8ff;
+            outline: none;
+            border: 3px solid;
+        }
+
+        
+
+    </style>
 </head>
 <body>
     <h1>Workshop #HTML - FORM</h1>
+
     <form>
         <label for="fname">ชื่อ&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</label>
         <input type="text" id="fname" name="fname"><br>
@@ -14,7 +66,7 @@
         <input type="text" id="lname" name="lname"><br>
 
         <label for="bd">วัน/เดือนปี/เกิด&ensp;&nbsp;</label>
-        <input type="date" id="db" name="db"><br>
+        <input type="date" id="bd" name="bd"><br>
 
         <label for="age">อายุ&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;</label>
         <input type="number" id="age" name="age" min="0"><br>
@@ -30,8 +82,8 @@
 
         <table style="text-align: center; vertical-align: middle;">
             <tr>
-                <td>ที่อยู่&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</td>
-                <td><textarea rows="4" cols="40"></textarea></td>
+                <td><label for="address">ที่อยู่&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</label></td>
+                <td><textarea id="address" rows="4" cols="40"></textarea></td>
             </tr>
         </table>
         
@@ -44,30 +96,30 @@
         </select><br>
 
         <label for="music">แนวเพลงที่ชอบ</label>
-        <input type="radio" id="pop" name="music" value="เพื่อชีวิต">
-        <label for="pop">เพื่อชีวิต</label>
-        <input type="radio" id="folk" name="music" value="ลูกทุ่ง">
-        <label for="folk">ลูกทุ่ง</label>
-        <input type="radio" id="other" name="music" value="อื่นๆ">
-        <label for="other">อื่นๆ</label>
-        <input type="text" id="other" name="music">
+        <input type="radio" id="music_pop" name="music" value="เพื่อชีวิต">
+        <label for="music_pop">เพื่อชีวิต</label>
+        <input type="radio" id="music_folk" name="music" value="ลูกทุ่ง">
+        <label for="music_folk">ลูกทุ่ง</label>
+        <input type="radio" id="music_other" name="music" value="อื่นๆ">
+        <label for="music_other">อื่นๆ</label>
+        <input type="text" id="music_other_input" name="other">
         <br>
 
         <label for="pet">สัตว์ที่ชอบ&emsp;&emsp;</label>
-        <input type="radio" id="dog" name="pet" value="สุนัข">
-        <label for="dog">สุนัข</label>
-        <input type="radio" id="cat" name="pet" value="แมว">
-        <label for="cat">แมว</label>
-        <input type="radio" id="bird" name="pet" value="นก">
-        <label for="bird">นก</label><br>
+        <input type="radio" id="pet_dog" name="pet" value="สุนัข">
+        <label for="pet_dog">สุนัข</label>
+        <input type="radio" id="pet_cat" name="pet" value="แมว">
+        <label for="pet_cat">แมว</label>
+        <input type="radio" id="pet_bird" name="pet" value="นก">
+        <label for="pet_bird">นก</label><br>
 
         <label for="sport">กีฬาที่ชอบ&emsp;&emsp;</label>
-        <input type="checkbox" id="football" name="sport" value="ฟุตบอล">
-        <label for="football">ฟุตบอล</label>
-        <input type="checkbox" id="muzzle" name="sport" value="ตะกร้อ">
-        <label for="muzzle">ตะกร้อ</label>
-        <input type="checkbox" id="basketball" name="sport" value="บาสเกตบอล">
-        <label for="basketball">บาสเกตบอล</label><br>
+        <input type="checkbox" id="sport_football" name="sport" value="ฟุตบอล">
+        <label for="sport_football">ฟุตบอล</label>
+        <input type="checkbox" id="sport_muzzle" name="sport" value="ตะกร้อ">
+        <label for="sport_muzzle">ตะกร้อ</label>
+        <input type="checkbox" id="sport_basketball" name="sport" value="บาสเกตบอล">
+        <label for="sport_basketball">บาสเกตบอล</label><br>
 
         <br>
         
