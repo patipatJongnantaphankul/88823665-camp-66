@@ -1,165 +1,73 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Workshop #HTML - FORM</title> <!-- ชื่อจะยังปรากฏในแท็บของเบราว์เซอร์ -->
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: "Mitr";
-            overflow: hidden;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Workshop #CSS - FORM</title>
+        <link rel="stylesheet" href="mystyle.css">
+    </head>
+
+    <body>
+        <header>
+            <h2 class="logo">Workshop&nbsp;#CSS&nbsp;&#9866;&nbsp;FORM</h2>
+        </header>
+
+        <div class="wrapper">
+            <form>
+                <div class="form-group">
+                    <label for="fname">ชื่อ:</label>
+                    <input type="text" id="fname" name="fname">
+                </div>
         
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('wallpaper.jpg'); /* ใส่ภาพพื้นหลัง */
-            background-size: cover;
-            background-position: center;
-            filter: blur(5px);
-            z-index: -1;
-        }
-
-        .header {
-            position: relative;
-            z-index: 1;
-            color: #333;
-            background-color: rgba(255, 255, 255, 0.8); /* เพิ่มพื้นหลังโปร่งใส */
-            padding: 10px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        form {
-            padding: 30px;
-            border: 2px solid #707070ce;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            z-index: 1;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        label:hover {
-            border-color: #dbe2f1;
-            background-color: #a1c7b1;
-        }
-        button:hover {
-            border-color: #dbe2f1;
-            background-color: #a1c7b1;
-        }
-        input:hover {
-            border-color: #dbe2f1;
-            background-color: #a1c7b1;
-        }
-
-        @keyframes rainbow {
-            0% { border-color: red; }
-            14% { border-color: orange; }
-            28% { border-color: yellow; }
-            42% { border-color: green; }
-            57% { border-color: blue; }
-            71% { border-color: indigo; }
-            85% { border-color: violet; }
-            100% { border-color: red; }
-        }
-
-        input:focus, select:focus, textarea:focus {
-            animation: rainbow 1s infinite;
-            background-color: #f0f8ff;
-            outline: none;
-            border: 3px solid;
-        }
-    </style>
-</head>
-<body>
-    <div class="background"></div>
-    <div class="header">
-        <h1>Workshop #HTML - FORM</h1>
-    </div>
-
-    <form>
-        <label for="fname">ชื่อ&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</label>
-        <input type="text" id="fname" name="fname"><br>
-
-        <label for="lname">นามสกุล&emsp;&emsp;&emsp;&nbsp;</label>
-        <input type="text" id="lname" name="lname"><br>
-
-        <label for="bd">วัน/เดือนปี/เกิด&ensp;&nbsp;</label>
-        <input type="date" id="bd" name="bd"><br>
-
-        <label for="age">อายุ&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;</label>
-        <input type="number" id="age" name="age" min="0"><br>
-
-        <label for="gender">เพศ&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</label>
-        <input type="radio" id="male" name="gender" value="ชาย">
-        <label for="male">ชาย</label>
-        <input type="radio" id="female" name="gender" value="หญิง">
-        <label for="female">หญิง</label><br>
-
-        <label for="pic">รูป&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</label>
-        <input type="file" id="pic" name="pic"><br>
-
-        <table style="text-align: center; vertical-align: middle;">
-            <tr>
-                <td><label for="address">ที่อยู่&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</label></td>
-                <td><textarea id="address" rows="4" cols="40"></textarea></td>
-            </tr>
-        </table>
+                <div class="form-group">
+                    <label for="lname">นามสกุล:</label>
+                    <input type="text" id="lname" name="lname">
+                </div>
         
-        <label for="color">สีที่ชอบ&emsp;&emsp;&emsp;&nbsp;&nbsp;</label>
-        <select id="color" name="color">
-            <option value="red">แดง</option>
-            <option value="blue">น้ำเงิน</option>
-            <option value="green">เขียว</option>
-            <option value="yellow">เหลือง</option>
-        </select><br>
-
-        <label for="music">แนวเพลงที่ชอบ</label>
-        <input type="radio" id="music_pop" name="music" value="เพื่อชีวิต">
-        <label for="music_pop">เพื่อชีวิต</label>
-        <input type="radio" id="music_folk" name="music" value="ลูกทุ่ง">
-        <label for="music_folk">ลูกทุ่ง</label>
-        <input type="radio" id="music_other" name="music" value="อื่นๆ">
-        <label for="music_other">อื่นๆ</label>
-        <input type="text" id="music_other_input" name="other">
-        <br>
-
-        <label for="pet">สัตว์ที่ชอบ&emsp;&emsp;</label>
-        <input type="radio" id="pet_dog" name="pet" value="สุนัข">
-        <label for="pet_dog">สุนัข</label>
-        <input type="radio" id="pet_cat" name="pet" value="แมว">
-        <label for="pet_cat">แมว</label>
-        <input type="radio" id="pet_bird" name="pet" value="นก">
-        <label for="pet_bird">นก</label><br>
-
-        <label for="sport">กีฬาที่ชอบ&emsp;&emsp;</label>
-        <input type="checkbox" id="sport_football" name="sport" value="ฟุตบอล">
-        <label for="sport_football">ฟุตบอล</label>
-        <input type="checkbox" id="sport_muzzle" name="sport" value="ตะกร้อ">
-        <label for="sport_muzzle">ตะกร้อ</label>
-        <input type="checkbox" id="sport_basketball" name="sport" value="บาสเกตบอล">
-        <label for="sport_basketball">บาสเกตบอล</label><br>
-
-        <br>
+                <div class="form-group">
+                    <label for="bd">วัน/เดือน/ปีเกิด:</label>
+                    <input type="date" id="bd" name="bd">
+                </div>
         
-        <input type="checkbox" id="consent" name="consent">
-        <label for="consent">ยินยอมให้เก็บข้อมูล</label>
+                <div class="form-group">
+                    <label for="age">อายุ:</label>
+                    <input type="number" id="age" name="age" min="0">
+                </div>
         
-        <br><br>
-
-        <button type="reset">Reset</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        <button type="submit">Submit</button>
-    </form>
-</body>
+                <div class="form-group">
+                    <label for="address">ที่อยู่:</label>
+                    <textarea id="address" rows="4"></textarea>
+                </div>
+        
+                <div class="form-group">
+                    <label for="color">สีที่ชอบ:</label>
+                    <select id="color" name="color">
+                        <option value="red">แดง</option>
+                        <option value="blue">น้ำเงิน</option>
+                        <option value="green">เขียว</option>
+                        <option value="yellow">เหลือง</option>
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label>เพศ:</label>
+                    <input type="radio" id="male" name="gender" value="ชาย">
+                    <label for="male" style="text-align: left;">ชาย</label>
+                    <input type="radio" id="female" name="gender" value="หญิง">
+                    <label for="female" style="text-align: left;">หญิง</label>
+                </div>
+        
+                <div class="form-group">
+                    <label for="pic">รูป:</label>
+                    <input type="file" id="pic" name="pic" style="color: aliceblue;">
+                </div>
+        
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </form>
+            
+        </div>
+        
+    </body>
 </html>
