@@ -8,11 +8,10 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', function () {
-    return "<h1>Hello world</h1>";
+    return "<h1>Hello World</h1>";
 });
 
-Route::get("/mycontroller/{id?}",
-    [MyController::class, 'myfunction']);
 
-Route::post('/mycontroller/{id?}',
-    [MyController::class, 'myfunction']);
+
+Route::get('/multiplication', [MyController::class, 'index'])->name('multiplication.index');
+Route::post('/multiplication', [MyController::class, 'show'])->name('multiplication.show');
