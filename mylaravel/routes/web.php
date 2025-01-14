@@ -2,16 +2,29 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\HomeController;
+
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.default');
 });
 
-Route::get('/hello', function () {
-    return "<h1>Hello World</h1>";
+Route::get('/login',
+    [LoginController::class, 'index']);
+
+Route::get('/register',
+    [RegisterController::class, 'index']);
+
+Route::get('/home', function () {
+    return view('layouts.default');
 });
 
 
 
-Route::get('/multiplication', [MyController::class, 'index'])->name('multiplication.index');
-Route::post('/multiplication', [MyController::class, 'show'])->name('multiplication.show');
+Route::get('/multiplication',
+    [MyController::class, 'back']);
+
+Route::post('/multiplication',
+    [MyController::class, 'multiplication']);

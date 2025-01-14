@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">ตารางสูตรคูณ</h1>
-        <form action="{{ route('multiplication.show') }}" method="POST" class="mb-4">
+        <form action="{{ url('multiplication') }}" method="POST" class="mb-4">
             @csrf
             <div class="mb-3">
                 <label for="number" class="form-label">แม่สูตรคูณ</label>
