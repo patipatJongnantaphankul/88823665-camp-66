@@ -8,7 +8,11 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get('/', function () {
-    return view('layouts.default');
+    return view('home');
+});
+
+Route::get('/home', function () {
+    return view('home');
 });
 
 Route::get('/login',
@@ -16,10 +20,6 @@ Route::get('/login',
 
 Route::get('/register',
     [RegisterController::class, 'index']);
-
-Route::get('/home', function () {
-    return view('layouts.default');
-});
 
 
 
