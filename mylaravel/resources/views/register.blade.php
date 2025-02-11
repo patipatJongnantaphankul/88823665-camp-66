@@ -15,16 +15,22 @@
           <div class="input-group mb-3">
             <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" oninput="checkname()"/>
             <div class="input-group-text"><span class="bi bi-person"></span></div>
-
+            <div class="valid-feedback">Correct</div>
+            <div class="invalid-feedback">Please specify firstname-lastname.</div>
 
           </div>
           <div class="input-group mb-3">
             <input type="email" name="email" id="email" class="form-control" placeholder="Email" oninput="checkemail()"/>
             <div class="input-group-text"><span class="bi bi-envelope"></span></div>
+            <div class="valid-feedback">Correct</div>
+            <div class="invalid-feedback">Please Enter correct email address.</div>
+
           </div>
           <div class="input-group mb-3">
             <input type="password" name="password" id="password" class="form-control" placeholder="Password" oninput="checkpassword()"/>
             <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+            <div class="valid-feedback">Correct</div>
+            <div class="invalid-feedback">Please Enter correct password</div>
           </div>
           <!--begin::Row-->
           <div class="row">
@@ -109,12 +115,12 @@ function checkname() {
       let checkbox = document.getElementById("flexCheckDefault").checked;
      let confirm =  checkname() &&checkemail() &&checkpassword() && checkbox ;
      let nametitle = confirm ? "Success" : "Error",
-         nametext = !checkname()?"please input name":!checkemail()?"please input email ":!checkpassword()?"please input password ":confirm ? "thank you for register" : "please verify all",
-         typeicon = confirm ? "success" : "error";
+         nametext = !checkname()?"Incorrect Username.":!checkemail()?"Incorrect Email.":!checkpassword()?"Incorrect Password.":confirm ? "Thank you" : "Accept the terms.",
+         typeicon = confirm ? "Success" : "Error";
       swal.fire({
         title:nametitle,
-        text : nametext,
-        icon:typeicon
+        text:nametext,
+        icon:"error"
       })
      if(confirm){
       event.target.submit();
