@@ -80,10 +80,11 @@
 
 function checkname() {
     let name = $('#name').val().trim();
-    if (name !== "" && name.length>=3) {
+
+    if(name !== "" && name.length>=3){
         $('#name').removeClass('is-invalid').addClass('is-valid');
         return true;
-    } else {
+    }else{
         $('#name').removeClass('is-valid').addClass('is-invalid');
         return false;
     }
@@ -112,15 +113,16 @@ function checkname() {
   }
     function allcheck(event){
       event.preventDefault();
-      let checkbox = document.getElementById("flexCheckDefault").checked;
+     let checkbox = document.getElementById("flexCheckDefault").checked;
      let confirm =  checkname() &&checkemail() &&checkpassword() && checkbox ;
      let nametitle = confirm ? "Success" : "Error",
-         nametext = !checkname()?"Incorrect Username.":!checkemail()?"Incorrect Email.":!checkpassword()?"Incorrect Password.":confirm ? "Thank you" : "Accept the terms.",
-         typeicon = confirm ? "Success" : "Error";
-      swal.fire({
+         nametext = !checkname()?"Please Input Username.":!checkemail()?"Incorrect Email.":!checkpassword()?"Incorrect Password.":confirm ? "Thank you" : "Accept the terms.",
+         typeicon = confirm ? "success" : "error";
+
+        swal.fire({
         title:nametitle,
         text:nametext,
-        icon:"error"
+        icon:typeicon
       })
      if(confirm){
       event.target.submit();
