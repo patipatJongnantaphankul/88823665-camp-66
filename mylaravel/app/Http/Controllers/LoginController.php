@@ -20,7 +20,7 @@ class LoginController extends Controller
         if(Hash::check($req->password, $user->password)){
             session()->forget('error');
             session(['user'=> $user]);
-            
+
             return redirect('/');
         }else{
             session(['error'=> 'ข่อมูลการเข้าสู่ระบบไม่ถูกต้อง']);
